@@ -69,9 +69,9 @@ $colors: map-merge((
 
 $default:       #043B38 !default;
 $primary:       #4FC900 !default;
-$primary2:      #000000 !default;
-$primary3:      #00DFB6 !default;
-$primary4:      #043B38 !default;
+$primary1:      #000000 !default;
+$primary2:      #00DFB6 !default;
+$primary3:      #043B38 !default;
 $secondary:     #00DFB6 !default;
 $secondary1:    #E6C9FF !default;
 $secondary2:    #f4f5f7 !default;
@@ -98,7 +98,13 @@ $theme-colors: () !default;
 $theme-colors: map-merge((
   "default":      $default,
   "primary":      $primary,
+  "primary1":      $primary1,
+  "primary2":      $primary2,
+  "primary3":      $primary3,
   "secondary":    $secondary,
+  "secondary1":    $secondary1,
+  "secondary2":    $secondary2,
+  "secondary3":    $secondary3,
   "success":      $success,
   "info":         $info,
   "warning":      $warning,
