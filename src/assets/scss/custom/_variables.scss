@@ -1,4 +1,4 @@
-
+@use "sass:math";
 // Global settings
 
 $enable-caret:              true !default;
@@ -67,9 +67,15 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$default:       #063A38 !default;
-$primary:       #5e72e4 !default;
-$secondary:     #f4f5f7 !default;
+$default:       #043B38 !default;
+$primary:       #4FC900 !default;
+$primary2:      #000000 !default;
+$primary3:      #00DFB6 !default;
+$primary4:      #043B38 !default;
+$secondary:     #00DFB6 !default;
+$secondary1:    #E6C9FF !default;
+$secondary2:    #f4f5f7 !default;
+$secondary3:    #0083FF !default;
 $success:       $green !default;
 $info:          $teal !default;
 $warning:       $orange !default;
@@ -310,8 +316,8 @@ $transition-collapse:         height .35s ease !default;
 
 // Fonts
 
-$font-family-base: 'Open Sans', sans-serif !default;
-$font-family-alt: 'Open Sans', sans-serif !default;
+$font-family-base: 'Comfortaa', cursive !default;
+$font-family-alt: 'Avenir Roman', sans-serif !default;
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-xl:                ($font-size-base * 1.5);
@@ -334,11 +340,11 @@ $h4-font-size:                $font-size-base * 1.5 !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
-$headings-margin-bottom:      ($spacer / 2);
+$headings-margin-bottom:      math.div($spacer, 2);
 $headings-font-family:        inherit !default;
 $headings-font-weight:        $font-weight-normal !default;
 $headings-line-height:        1.5 !default;
-$headings-color:              $gray-800 !default;
+$headings-color:              $default !default;
 
 $heading-letter-spacing:      .025em !default;
 $heading-font-size:           .95rem !default;
