@@ -87,6 +87,13 @@
 }
 
 .dropdown-menu-xl {
-    min-width: 450px;
+    left: 0;
+    right: 0;
+    top: 3rem;
+    margin: 1rem !important;
     border-radius: $border-radius-lg;
+}
+
+.nav-item-full {
+    position: inherit;
 }

@@ -240,11 +240,8 @@
         }
 
         :nth-child(6) {
-            width: 200px;
-            height: 200px;
-            top: 44%;
-            left: 10%;
-            right: auto;
+            top: 0;
+            right: 0;
             background: rgba(255, 255, 255, .15);
         }
 
@@ -256,7 +253,7 @@
 
         :nth-child(8) {
             bottom: 0;
-            right: -1rem;
+            left: 0;
             background: transparent;
             width: 32rem;
             position: absolute;
@@ -295,7 +292,10 @@
         }
 
         &.shape-default {
-            background: #00B999; //linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%, shapes-default-color("step-2-gradient-bg") 70%, shapes-default-color("step-3-gradient-bg") 94%);
+            //background: $secondary3;
+            //background: linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%, shapes-default-color("step-2-gradient-bg") 70%, shapes-default-color("step-3-gradient-bg") 94%);
+            //background: linear-gradient(150deg, #043B38FF 15%, #6772e5 70%, #4FC900FF 94%);
+            background: white;
         }
 
         &.shape-light {

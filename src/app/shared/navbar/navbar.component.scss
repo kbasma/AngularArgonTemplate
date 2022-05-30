@@ -1,0 +1,47 @@
+#navbar-main.headroom--top {
+  .container {
+    .navbar-brand {
+      #dark-logo {
+        display: block;
+      }
+      #lite-logo {
+        display: none;
+      }
+    }
+  }
+}
+
+#navbar-main.headroom--not-top {
+  .container {
+    .navbar-brand {
+      #dark-logo {
+        display: none;
+      }
+      #lite-logo {
+        display: block;
+      }
+    }
+  }
+}
+
+#navbar-main.headroom--not-top {
+  .container {
+    .navbar-toggler {
+      span {
+        background-color: #043B38FF;
+        border-radius: .25rem;
+      }
+    }
+  }
+}
+
+#navbar-main.headroom--top {
+  .container {
+    .navbar-toggler {
+      span {
+        background-color: #043B38FF;
+        border-radius: .25rem;
+      }
+    }
+  }
+}

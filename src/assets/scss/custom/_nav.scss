@@ -11,6 +11,21 @@
     }
 }
 
+.get-started {
+    color: white;
+
+    &:hover {
+        color: theme-color("primary");
+    }
+
+    i:not(.fa) {
+        position: relative;
+        top: 2px;
+    }
+
+}
+
+
 // Pills 
 
 .nav-pills {
