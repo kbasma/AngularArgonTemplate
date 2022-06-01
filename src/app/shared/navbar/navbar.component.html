@@ -1,14 +1,18 @@
-<nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
+<nav id="navbar-main"
+     class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned">
   <div class="container align-items-stretch">
     <a class="navbar-brand mr-lg-5" [routerLink]="['/home']">
-      <img id="dark-logo" alt="Tackon Logo black" style="height: 3rem" src="./assets/img/logo/Tackon_Full_Color_Logo.png"/>
-      <img id="lite-logo" alt="Tackon Logo white" style="height: 3rem" src="./assets/img/logo/Tackon_White_Green_Logo.png"/>
+      <img id="dark-logo" alt="Tackon Logo black" style="height: 3rem"
+           src="./assets/img/logo/Tackon_Full_Color_Logo.png"/>
+      <img id="lite-logo" alt="Tackon Logo white" style="height: 3rem"
+           src="./assets/img/logo/Tackon_White_Green_Logo.png"/>
     </a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
-          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+            [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse" id="navbar_global" style="justify-content: space-between" [ngbCollapse]="isCollapsed">
+    <div class="navbar-collapse collapse" id="navbar_global" style="justify-content: space-between"
+         [ngbCollapse]="isCollapsed">
       <div class="navbar-collapse-header">
         <div class="row">
           <div class="col-6 collapse-brand">
@@ -18,297 +22,254 @@
           </div>
           <div class="col-6 collapse-close">
             <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
-                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
               <span></span>
               <span></span>
             </button>
           </div>
         </div>
       </div>
-      <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-        <li class="nav-item dropdown nav-item-full">
-          <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
-            <div style="width: 2rem; height: 2rem" class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
-              <i class="ni ni-spaceship"></i>
+      <div class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <ul class="align-items-lg-center">
+          <li class="nav-item dropdown nav-item-full">
+            <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
+              <div style="width: 2rem; height: 2rem"
+                   class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
+                <i class="ni ni-spaceship"></i>
+              </div>
+              <span class="nav-link-inner--text">Solutions</span>
+            </a>
+            <div class="dropdown-menu-xl dropdown-menu">
+              <div class="dropdown-menu-inner">
+                <div class="row align-items-center">
+                  <div class="col-sm text-center">
+                    <h1 class="display-3 text-default">
+                      <span style="width: fit-content;margin: 0 auto;border-bottom: 1px solid;">Solutions</span>
+                    </h1>
+                    <p class="lead text-default">Solutions that are integrated, nimble, contactless. We are modern
+                      Fintech.</p>
+                  </div>
+                  <div class="col-sm">
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Text</h5>
+                        <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our scan to pay
+                          services</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Scan</h5>
+                        <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our scan to pay
+                          services</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-palette"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-primary mb-md-1">QR</h6>
+                        <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing
+                          services</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-sm">
+                    <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-palette"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-primary mb-md-1">Invoice</h6>
+                        <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing
+                          services</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-palette"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-primary mb-md-1">E-Commerce</h6>
+                        <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing
+                          services</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span class="nav-link-inner--text">Solutions</span>
-          </a>
-          <div class="dropdown-menu-xl dropdown-menu">
-            <div class="dropdown-menu-inner">
-<!--              <a routerLinkActive="active" [routerLink]="['#']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">-->
-<!--                  <i class="ni ni-spaceship"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">Coming Soon!</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Looking forward to working with you soon.</p>-->
-<!--                </div>-->
-<!--              </a>-->
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
+          </li>
+          <li class="nav-item dropdown nav-item-full">
+            <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
+              <div style="width: 2rem; height: 2rem"
+                   class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
+                <i class="ni ni-spaceship"></i>
+              </div>
+              <span class="nav-link-inner--text">Partners</span>
+            </a>
+            <div class="dropdown-menu-xl dropdown-menu">
+              <div class="dropdown-menu-inner">
+                <div class="row align-items-center">
+                  <div class="col-sm text-center">
+                    <h1 class="display-3 text-default">
+                      <span style="width: fit-content;margin: 0 auto;border-bottom: 1px solid;">Partners</span>
+                    </h1>
+                    <p class="lead text-default">Our solutions are built to drive modern contactless payments.
+                      Here is how we can accelerate your business.</p>
+                  </div>
+                  <div class="col-sm">
+                    <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-palette"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-primary mb-md-1">ISVs</h6>
+                        <p class="description d-none d-md-inline-block mb-0">View a list of our Api changelog</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Merchants</h5>
+                        <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and
+                          services</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-sm">
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Agents + ISOs</h5>
+                        <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and
+                          services</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Fintech</h5>
+                        <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and
+                          services</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Text</h5>
-                  <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our scan to pay services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Scan</h5>
-                  <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our scan to pay services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">QR</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Invoice</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">E-Commerce</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Learn how to integrate with our invoicing services</p>
-                </div>
-              </a>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="nav-item dropdown nav-item-full">
-          <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
-            <div style="width: 2rem; height: 2rem" class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
-              <i class="ni ni-spaceship"></i>
+          </li>
+          <li class="nav-item dropdown nav-item-full">
+            <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
+              <div style="width: 2rem; height: 2rem"
+                   class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
+                <i class="ni ni-spaceship"></i>
+              </div>
+              <span class="nav-link-inner--text">Developers</span>
+            </a>
+            <div class="dropdown-menu-xl dropdown-menu">
+              <div class="dropdown-menu-inner">
+                <div class="row align-items-center">
+                  <div class="col-sm text-center">
+                    <h1 class="display-3 text-default">
+                      <span style="width: fit-content;margin: 0 auto;border-bottom: 1px solid;">Partners</span>
+                    </h1>
+                    <p class="lead text-default">Our solutions are built to drive modern contactless payments.
+                      Here is how we can accelerate your business.</p>
+                  </div>
+                  <div class="col-sm text-center">
+                    <a routerLinkActive="active" [routerLink]="['documentation/colors']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                        <i class="ni ni-palette"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-primary mb-md-1">Documentation</h6>
+                        <p class="description d-none d-md-inline-block mb-0">Start integrating Tackon Technologies products
+                          and services</p>
+                      </div>
+                    </a>
+                    <a routerLinkActive="active" [routerLink]="['documentation/alerts']"
+                       class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="ni ni-ui-04"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h5 class="heading text-warning mb-md-1">Support</h5>
+                        <p class="description d-none d-md-inline-block mb-0">View our guides to help you integrate with our
+                          products and services</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <span class="nav-link-inner--text">Partners</span>
-          </a>
-          <div class="dropdown-menu-xl dropdown-menu" >
-            <div class="dropdown-menu-inner">
-<!--              <a routerLinkActive="active" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">-->
-<!--                  <i class="ni ni-spaceship"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">Coming Soon!</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Looking forward to support your business.</p>-->
-<!--                </div>-->
-<!--              </a>-->
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">ISVs</h6>
-                  <p class="description d-none d-md-inline-block mb-0">View a list of our Api changelog</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Merchants</h5>
-                  <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Agents + ISOs</h5>
-                  <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Fintech</h5>
-                  <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and services</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item dropdown nav-item-full">
-          <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">
-            <div style="width: 2rem; height: 2rem" class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">
-              <i class="ni ni-spaceship"></i>
-            </div>
-            <span class="nav-link-inner--text">Developers</span>
-          </a>
-          <div class="dropdown-menu-xl dropdown-menu" >
-            <div class="dropdown-menu-inner">
-<!--              <a routerLinkActive="active" [routerLink]="['#']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">-->
-<!--                  <i class="ni ni-spaceship"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">Coming Soon!</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Integrate with our payment services soon.</p>-->
-<!--                </div>-->
-<!--              </a>-->
-              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                  <i class="ni ni-palette"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-primary mb-md-1">Documentation</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Start integrating Tackon Technologies products and services</p>
-                </div>
-              </a>
-              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-ui-04"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h5 class="heading text-warning mb-md-1">Support</h5>
-                  <p class="description d-none d-md-inline-block mb-0">View our guides to help you integrate with our products and services</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </li>
-<!--        <li class="nav-item dropdown nav-item-full">-->
-<!--          <a class="nav-link no-caret" [routerLink]="['#']" data-toggle="dropdown" role="button">-->
-<!--            <div style="width: 2rem; height: 2rem" class="icon icon-shape bg-gradient-primary rounded-circle text-white d-lg-none">-->
-<!--              <i class="ni ni-spaceship"></i>-->
-<!--            </div>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">Support</span>-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu-xl dropdown-menu" >-->
-<!--            <div class="dropdown-menu-inner">-->
-<!--              <a routerLinkActive="active" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">-->
-<!--                  <i class="ni ni-spaceship"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">Coming Soon!</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Looking forward to support your business.</p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">-->
-<!--                  <i class="ni ni-palette"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">API changelog</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">View a list of our Api changelog</p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">-->
-<!--                  <i class="ni ni-ui-04"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h5 class="heading text-warning mb-md-1">API Status</h5>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Check the status of our Api and services</p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </li>-->
-
-
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link no-caret" href="#contact-us-form" role="button">-->
-<!--            <i class="ni ni-ui-04 d-lg-none"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text">Contact Us</span>-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu-xl dropdown-menu" >-->
-<!--            <div class="dropdown-menu-inner">-->
-<!--              <a routerLinkActive="active" [routerLink]="['documentation/tutorial']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">-->
-<!--                  <i class="ni ni-spaceship"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">About Us</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">Meet our company contributors </p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--              <a routerLinkActive="active" [routerLink]="['documentation/colors']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-success rounded-circle text-white">-->
-<!--                  <i class="ni ni-palette"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h6 class="heading text-primary mb-md-1">Customers</h6>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">View Tackon Technologies Customers</p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--              <a routerLinkActive="active" [routerLink]="['documentation/alerts']" class="media d-flex align-items-center">-->
-<!--                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">-->
-<!--                  <i class="ni ni-ui-04"></i>-->
-<!--                </div>-->
-<!--                <div class="media-body ml-3">-->
-<!--                  <h5 class="heading text-warning mb-md-1">Tackon Teams</h5>-->
-<!--                  <p class="description d-none d-md-inline-block mb-0">See if you meet the needs of any vetting jobs we intend to supply</p>-->
-<!--                </div>-->
-<!--              </a>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </li>-->
-
-
-      </ul>
+          </li>
+        </ul>
+      </div>
       <button class="btn btn-default">
-        <a class="get-started no-caret" href="#contact-us-form" role="button">
+        <a class="get-started no-caret" [href]="['#contact-us-form']" role="button">
           <i class="ni ni-ui-04 d-lg-none"></i>
           <span class="nav-link-inner--text">Get Started</span>
         </a>
       </button>
-<!--      <ul class="navbar-nav align-items-lg-center ml-lg-auto">-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">-->
-<!--            <i class="fa fa-facebook-square"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Facebook</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">-->
-<!--            <i class="fa fa-instagram"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Instagram</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">-->
-<!--            <i class="fa fa-twitter-square"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Twitter</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">-->
-<!--            <i class="fa fa-github"></i>-->
-<!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Github</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--        <li class="nav-item d-none d-lg-block ml-lg-4">-->
-<!--          <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar" target="_blank" class="btn btn-neutral btn-icon">-->
-<!--            <span class="btn-inner--icon">-->
-<!--              <i class="fa fa-cloud-download mr-2"></i>-->
-<!--            </span>-->
-<!--            <span class="nav-link-inner--text">Download</span>-->
-<!--          </a>-->
-<!--        </li>-->
-<!--      </ul>-->
+
+      <!--      <ul class="navbar-nav align-items-lg-center ml-lg-auto">-->
+      <!--        <li class="nav-item">-->
+      <!--          <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">-->
+      <!--            <i class="fa fa-facebook-square"></i>-->
+      <!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Facebook</span>-->
+      <!--          </a>-->
+      <!--        </li>-->
+      <!--        <li class="nav-item">-->
+      <!--          <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">-->
+      <!--            <i class="fa fa-instagram"></i>-->
+      <!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Instagram</span>-->
+      <!--          </a>-->
+      <!--        </li>-->
+      <!--        <li class="nav-item">-->
+      <!--          <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">-->
+      <!--            <i class="fa fa-twitter-square"></i>-->
+      <!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Twitter</span>-->
+      <!--          </a>-->
+      <!--        </li>-->
+      <!--        <li class="nav-item">-->
+      <!--          <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system-angular?ref=adsa-navbar" target="_blank" data-toggle="tooltip" title="Star us on Github">-->
+      <!--            <i class="fa fa-github"></i>-->
+      <!--            <span class="nav-link-inner&#45;&#45;text d-lg-none">Github</span>-->
+      <!--          </a>-->
+      <!--        </li>-->
+      <!--        <li class="nav-item d-none d-lg-block ml-lg-4">-->
+      <!--          <a href="https://www.creative-tim.com/product/argon-design-system-angular?ref=adsa-navbar" target="_blank" class="btn btn-neutral btn-icon">-->
+      <!--            <span class="btn-inner--icon">-->
+      <!--              <i class="fa fa-cloud-download mr-2"></i>-->
+      <!--            </span>-->
+      <!--            <span class="nav-link-inner--text">Download</span>-->
+      <!--          </a>-->
+      <!--        </li>-->
+      <!--      </ul>-->
     </div>
   </div>
 </nav>
