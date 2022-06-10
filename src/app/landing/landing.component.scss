@@ -20,19 +20,65 @@
     display: none;
   }
 
+  &.image1a {
+    bottom: 2rem;
+    left: 0rem;
+    width: 15rem;
+    position: absolute;
+    transform: scaleX(-1);
+  }
+
+  &.image1b {
+    bottom: 17rem;
+    left: 10rem;
+    width: 7rem;
+    position: absolute;
+  }
+
+  &.image1c {
+    bottom: -8rem;
+    left: 10rem;
+    width: 12rem;
+    transform: rotate(90deg);
+    position: absolute;
+  }
+
   &.image2 {
     left: 0;
   }
 
-  &.image1 {
-    position: absolute;
-    right: 0;
-    width: 10rem;
-  }
   &.image3 {
-    bottom: -3px;
+    bottom: 77px;
+    right: -4px;
+    width: 28rem;
+    position: absolute;
+  }
+
+  &.image4 {
+    top: 0;
     right: -4px;
     width: 32rem;
+    position: absolute;
+  }
+  &.image5 {
+    transform: rotate(-90deg) scaleX(-1);
+    top: 8rem;
+    right: -9rem;
+    height: 10rem;
+    position: absolute;
+  }
+  &.image6 {
+    transform: rotate(90deg) scaleX(-1);
+    bottom: 8rem;
+    left: -9rem;
+    height: 10rem;
+    position: absolute;
+  }
+  &.image7 {
+    transform: rotate(90deg) scaleX(-1);
+    bottom: 9rem;
+    right: -60px;
+    width: 26rem;
     position: absolute;
   }
 }

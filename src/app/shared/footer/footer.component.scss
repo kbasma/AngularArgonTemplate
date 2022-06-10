@@ -1,11 +1,48 @@
 footer {
-  .shape {
-    img {
+  .web-text-color {
+    @media (min-width: 991.98px) {
+      color: white;
+    }
+    @media (max-width: 991.98px) {
+      color: black;
+    }
+  }
+  .web-image-view {
+    @media (max-width: 991.98px) {
+      display: none;
+    }
+
+    &.image1 {
       bottom: -14rem;
       right: -6px;
       background: transparent;
       width: 100%;
       position: absolute;
+    }
+
+    &.image2 {
+      bottom: 33rem;
+      left: 7rem;
+      background: transparent;
+      width: 7rem;
+      position: absolute;
+      transform: rotate(90deg);
+    }
+
+    &.image3 {
+      bottom: -15rem;
+      background: transparent;
+      width: 100%;
+      position: absolute;
+    }
+
+    &.image4 {
+      bottom: 7rem;
+      right: -10rem;
+      background: transparent;
+      height: 8rem;
+      position: absolute;
+      transform: rotate(90deg);
     }
   }
 }

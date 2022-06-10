@@ -1,6 +1,9 @@
 <footer class="footer" [ngClass]="{'has-cards': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'}">
-    <div class="shape shape-style-1 shape-default">
-        <img alt="Organic - Teal Dark Green-2" src="./assets/img/layouts/Layout-12.png"/>
+    <div>
+      <img class="web-image-view image1" alt="Organic - Teal Dark Green-2" src="./assets/img/brand/Organic%20-%20Transparent%20Gray-7.png"/>
+      <img class="web-image-view image3" alt="Organic - Teal Dark Green-2" src="./assets/img/brand/Organic%20-%20Solid%20Teal-1.png"/>
+      <img class="web-image-view image2" alt="Organic - Teal Dark Green-2" src="./assets/img/brand/Connector%20-%20Circle-3.png"/>
+      <img class="web-image-view image4" alt="Organic - Teal Dark Green-2" src="./assets/img/brand/Connector%20-%20Green%20Dark%20Green-5.png"/>
     </div>
 <!--  <div class="container container-lg" *ngIf="getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login'">-->
 <!--    <div class="row">-->
@@ -23,8 +26,8 @@
   <div class="container">
     <div class="row row-grid align-items-center" [ngClass]="{'my-md': getPath()!=='/user-profile' && getPath()!=='/register' && getPath()!=='/login', 'mb-5':getPath()==='/user-profile' || getPath()==='/register' || getPath()==='/login'}">
       <div class="col-lg-6">
-        <h3 class="font-weight-light mb-2">Looking forward to working with you.</h3>
-        <h4 class="mb-0 font-weight-light">Let's get in touch!</h4>
+<!--        <h3 class="font-weight-light mb-2">Looking forward to working with you.</h3>-->
+<!--        <h4 class="mb-0 font-weight-light">Let's get in touch!</h4>-->
       </div>
 <!--      <div class="col-lg-6 text-lg-center btn-wrapper">-->
 <!--        <a target="_blank" href="https://twitter.com/creativetim" class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" ngbTooltip="Follow us">-->
@@ -44,9 +47,9 @@
     <hr>
     <div class="row align-items-center justify-content-md-between">
       <div class="col-md-6">
-        <div class="copyright">
+        <div class="copyright web-text-color">
           &copy; {{test | date: 'yyyy'}}
-          <a href="#">Tackon Technologies</a>.
+          <a class="web-text-color" href="#">Tackon Technologies</a>
         </div>
       </div>
       <div class="col-md-6">
