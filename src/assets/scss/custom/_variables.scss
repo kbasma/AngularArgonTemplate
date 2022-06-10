@@ -84,6 +84,12 @@ $light:         $gray-500 !default;
 $dark:          $gray-900 !default;
 $darker:        darken($gray-900, 15%) !default;
 
+$text:          #4FC900 !default;
+$scan:          #00DFB6 !default;
+$qr:            #D6DE23 !default;
+$invoice:       #0083FF !default;
+$ecommerce:     #043B38 !default;
+
 $facebook:      #3b5999 !default;
 $twitter:       #1da1f2 !default;
 $google-plus:   #dd4b39 !default;
@@ -112,7 +118,12 @@ $theme-colors: map-merge((
   "white":        $white,
   "neutral":      $white,
   "dark":         $dark,
-  "darker":       $darker
+  "darker":       $darker,
+  "text":         $text,
+  "scan":         $scan,
+  "qr":           $qr,
+  "invoice":      $invoice,
+  "ecommerce":    $ecommerce,
 ), $theme-colors);
 
 $brand-colors: () !default;
