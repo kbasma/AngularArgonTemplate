@@ -93,3 +93,16 @@
     }
   }
 }
+
+.select-label-special-render {
+  position: absolute;
+  height: 100%;
+  z-index: 10;
+  border-radius: 0.25rem;
+}
+
+.select-special-render {
+  padding-left: 2.2rem !important;
+  border-top-left-radius: 0.25rem !important;
+  border-bottom-left-radius: 0.25rem !important;
+}

@@ -89,6 +89,10 @@ $scan:          #00DFB6 !default;
 $qr:            #D6DE23 !default;
 $invoice:       #0083FF !default;
 $ecommerce:     #043B38 !default;
+$isv:           #4FC900 !default;
+$iso:           #00DFB6 !default;
+$merchant:      #0083FF !default;
+$fintech:       #D6DE23 !default;
 
 $facebook:      #3b5999 !default;
 $twitter:       #1da1f2 !default;
@@ -124,6 +128,10 @@ $theme-colors: map-merge((
   "qr":           $qr,
   "invoice":      $invoice,
   "ecommerce":    $ecommerce,
+  "isv":          $isv,
+  "iso":          $iso,
+  "merchant":     $merchant,
+  "fintech":      $fintech,
 ), $theme-colors);
 
 $brand-colors: () !default;
