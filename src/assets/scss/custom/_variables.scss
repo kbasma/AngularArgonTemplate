@@ -93,6 +93,8 @@ $isv:           #4FC900 !default;
 $iso:           #00DFB6 !default;
 $merchant:      #0083FF !default;
 $fintech:       #D6DE23 !default;
+$partners:      #043B38 !default;
+$partners:      #043B38 !default;
 
 $facebook:      #3b5999 !default;
 $twitter:       #1da1f2 !default;
@@ -132,6 +134,7 @@ $theme-colors: map-merge((
   "iso":          $iso,
   "merchant":     $merchant,
   "fintech":      $fintech,
+  "partners":     $partners,
 ), $theme-colors);
 
 $brand-colors: () !default;
