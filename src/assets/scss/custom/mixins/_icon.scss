@@ -1,4 +1,16 @@
 @mixin icon-shape-variant($color) {
     color: saturate(darken($color, 10%), 10);
-    background-color: transparentize(lighten($color, 10%), .5);
+    //background-color: transparentize(lighten($color, 10%), .5);
+    background-color: $color;
 }
+.st-white-0{fill:none;stroke:white;stroke-width:2;stroke-miterlimit:10;}
+.st-white-1{fill:none;stroke:white;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+.st-white-2{fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st-white-3{fill:none;stroke:white;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st-white-4{fill:none;stroke:white;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3;}
+
+.st-black-0{fill:none;stroke:black;stroke-width:2;stroke-miterlimit:10;}
+.st-black-1{fill:none;stroke:black;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+.st-black-2{fill:none;stroke:black;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st-black-3{fill:none;stroke:black;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;}
+.st-black-4{fill:none;stroke:black;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3;}

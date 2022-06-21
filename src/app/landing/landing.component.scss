@@ -87,9 +87,22 @@
   .show-brand-hover {
     display: none;
   }
-  :hover {
+  &:hover {
     .show-brand-hover {
       display: block !important;
+    }
+    .card-body {
+      div {
+        .icon {
+          background-color: transparentize(lighten(#4FC900FF, 10%), .5);
+          //background-color: #4FC900FF;
+        }
+        .btn-ecommerce {
+          background-color: transparentize(lighten(#4FC900FF, 10%), .5);
+          //background-color: #4FC900FF;
+          color: #043B38 !important;
+        }
+      }
     }
   }
 }
@@ -102,7 +115,7 @@
 }
 
 .select-special-render {
-  padding-left: 2.2rem !important;
+  //padding-left: 2.2rem !important;
   border-top-left-radius: 0.25rem !important;
   border-bottom-left-radius: 0.25rem !important;
 }
