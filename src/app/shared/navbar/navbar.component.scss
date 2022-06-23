@@ -50,3 +50,31 @@
     }
   }
 }
+
+#navbar-main {
+  a {
+    &:hover {
+      .icon-shape {
+        background-color: #4FC900FF !important;
+      }
+      .hover-flip {
+        transform: scaleX(-1);
+        transition-duration: 0.5s;
+
+      }
+    }
+  }
+  .dropdown-menu-inner {
+    .row {
+      max-width: 60rem;
+      margin: 0 auto;
+      h1 {
+        width: fit-content;
+        border-bottom: 1px solid;
+      }
+      p {
+        margin:0;
+      }
+    }
+  }
+}

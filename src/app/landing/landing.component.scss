@@ -17,7 +17,7 @@
 
 .web-image-view {
   @media (max-width:991.98px) {
-    display: none;
+    display: none !important;
   }
 
   &.image1a {
@@ -54,12 +54,19 @@
     position: absolute;
   }
 
-  &.image4 {
+  &.image4a {
     top: 0;
     right: -4px;
     width: 32rem;
     position: absolute;
   }
+  &.image4b {
+    top: 7rem;
+    right: 14rem;
+    width: 6rem;
+    position: absolute;
+  }
+
   &.image5 {
     transform: rotate(-90deg) scaleX(-1);
     top: 8rem;
@@ -89,18 +96,18 @@
   }
   &:hover {
     .show-brand-hover {
-      display: block !important;
+      display: block;
     }
     .card-body {
       div {
         .icon {
-          background-color: transparentize(lighten(#4FC900FF, 10%), .5);
-          //background-color: #4FC900FF;
+          //background-color: transparentize(lighten(#4FC900FF, 10%), .5);
+          background-color: #4FC900FF;
         }
         .btn-ecommerce {
-          background-color: transparentize(lighten(#4FC900FF, 10%), .5);
-          //background-color: #4FC900FF;
-          color: #043B38 !important;
+          //background-color: transparentize(lighten(#4FC900FF, 10%), .5);
+          background-color: #4FC900FF;
+          color: white !important;
         }
       }
     }
@@ -118,4 +125,23 @@
   //padding-left: 2.2rem !important;
   border-top-left-radius: 0.25rem !important;
   border-bottom-left-radius: 0.25rem !important;
+}
+
+#section2 {
+  .icon {
+    border: 3px solid white;
+  }
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
