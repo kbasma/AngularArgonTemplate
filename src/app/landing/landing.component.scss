@@ -15,7 +15,7 @@
   height: 350px;
 }
 
-.web-image-view {
+.web-view {
   @media (max-width:991.98px) {
     display: none !important;
   }
@@ -83,9 +83,9 @@
   }
   &.image7 {
     transform: rotate(90deg) scaleX(-1);
-    bottom: 9rem;
-    right: -60px;
-    width: 26rem;
+    bottom: -4rem;
+    right: 5rem;
+    width: 1rem;
     position: absolute;
   }
 }
@@ -144,4 +144,17 @@
   to {
     transform: rotate(359deg);
   }
+}
+
+.move-ud {
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 2s infinite alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }

@@ -77,4 +77,20 @@
       }
     }
   }
+
+  @media (max-width: 991.98px) { // navbar style for mobile view
+    .nav-item {
+      display: block;
+    }
+  }
+}
+.mobile-view {
+  @media (min-width: 991.98px) {
+    display: none !important;
+  }
+  padding-left: .5rem;
+  li {
+    list-style: none;
+  }
+
 }
