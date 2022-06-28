@@ -42,9 +42,18 @@
 	width: $icon-size-sm;
 	height: $icon-size-sm;
 
-	i, svg {
-		font-size: $icon-size-sm - .75;
-	}
+	//i, svg {
+	//	font-size: $icon-size-sm - .75;
+	//}
+}
+
+.icon-sm-special {
+	width: $icon-size-sm-special;
+	height: $icon-size-sm-special;
+
+	//i, svg {
+	//	font-size: $icon-size-sm - .75;
+	//}
 }
 
 .icon-sm + .icon-text {
@@ -69,14 +78,23 @@
 	&.icon-lg {
 		i, svg {
 			font-size: 1.625rem;
-		}	
+		}
 	}
 
 	&.icon-sm {
+		padding: 7px !important;
+
 		i, svg {
 			font-size: .875rem;
-		}	
+		}
 	}
+
+	//&.icon-sm-special {
+	//	padding: 7px !important;
+	//	i, svg {
+	//		font-size: .875rem;
+	//	}
+	//}
 
 	svg {
 		width: 30px;

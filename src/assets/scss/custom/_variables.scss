@@ -425,7 +425,7 @@ $list-inline-padding:         .5rem !default;
 
 $mark-bg:                     #fcf8e3 !default;
 
-$hr-margin-y:                 $spacer * 2 !default;
+$hr-margin-y: $spacer * 2 !default;
 
 
 // Icons
@@ -434,16 +434,17 @@ $icon-size: 3rem !default;
 $icon-size-xl: 5rem !default;
 $icon-size-lg: 4rem !default;
 $icon-size-sm: 2rem !default;
+$icon-size-sm-special: 1rem !default;
 
 
 // Tables
 
-$table-cell-padding:          1rem !default;
-$table-cell-padding-sm:       .3rem !default;
+$table-cell-padding: 1rem !default;
+$table-cell-padding-sm: .3rem !default;
 
-$table-bg:                    transparent !default;
-$table-accent-bg:             rgba($black, .05);
-$table-hover-bg:              rgba($black, .075);
+$table-bg: transparent !default;
+$table-accent-bg: rgba($black, .05);
+$table-hover-bg: rgba($black, .075);
 $table-active-bg:             $table-hover-bg !default;
 
 $table-border-width:          $border-width !default;
