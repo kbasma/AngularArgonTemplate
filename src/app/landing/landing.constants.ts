@@ -5,7 +5,7 @@ export const LANDING = {
     SCAN: 'I would like to learn more about Tackon’s Scan Solutions.',
     QR: 'I would like to learn more about Tackon’s QR Solutions.',
     INVOICE: 'I would like to learn more about Tackon’s Invoice Solutions.',
-    ECOMMERCE: '“I would like to learn more about Tackon’s E-Commerce Solutions.',
+    ECOMMERCE: 'I would like to learn more about Tackon’s E-Commerce Solutions.',
   },
   CONTACT_FORM: {
     KEY: {

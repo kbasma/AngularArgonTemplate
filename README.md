@@ -45,7 +45,7 @@ amplify env add
 - Deploy the checkout environment
 
 ```
-apmlify publish
+amplify publish
 ```
 
 **Reference**
