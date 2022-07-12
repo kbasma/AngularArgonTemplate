@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IAlert} from '../sections/alerts-section/alerts-section.component';
+import {LANDING} from './landing.constants';
 
 declare let Email: any;
 
@@ -15,6 +16,7 @@ export class LandingComponent implements OnInit {
   focus1: any;
   emailForm: FormGroup;
   alerts: Array<IAlert> = [];
+  commentRequest = new Map();
 
   constructor(
     private formBuilder: FormBuilder
@@ -51,15 +53,43 @@ export class LandingComponent implements OnInit {
     });
   }
 
+  populateComment(type) {
+    const comments = this.emailForm.controls['comments'].value;
+    // Remove any additional comments that have been manually deleted from text area
+    for (let entry of this.commentRequest.entries()) {
+      console.log(entry[0], entry[1]);
+      if (!comments.includes(entry[1])) {
+        this.commentRequest.delete(entry[0]);
+      }
+    }
+    this.commentRequest.set(type, `${LANDING.COMMENTS[type]}`);
+    this.buildComments();
+  }
+
+  buildComments() {
+    let comments = this.emailForm.controls['comments'].value;
+    // Build the comments
+    for (const entry of this.commentRequest.entries()) {
+      if (!comments.includes(entry[1])) {
+        if (comments.length > 0) {
+          comments += `\n${LANDING.COMMENTS.ADDITIONAL}${entry[1]}\n`;
+        } else {
+          comments += `${entry[1]}\n`;
+        }
+      }
+    }
+    this.emailForm.controls['comments'].setValue(comments);
+  }
+
   sendMessage() {
     this.alerts = new Array<IAlert>();
     if (this.emailForm.valid) {
       Email.send({
-        Host : 'smtp.elasticemail.com',
-        Username : 'zack.blaylock@tackontechnologies.com',
-        Password : '57071303FB87FF861FBD1E47B1A33992C801',
-        To : 'info@tackontechnologies.com',
-        From : 'info@tackontechnologies.com',
+        Host: 'smtp.elasticemail.com',
+        Username: 'zack.blaylock@tackontechnologies.com',
+        Password: '57071303FB87FF861FBD1E47B1A33992C801',
+        To: 'info@tackontechnologies.com',
+        From: 'info@tackontechnologies.com',
         Subject : `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
         Body :
           `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
