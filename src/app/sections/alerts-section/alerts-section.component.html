@@ -1,12 +1,30 @@
-<div class="container">
+<div *ngIf="alerts" class="container">
   <div *ngFor="let alert of alerts">
     <ngb-alert [type]="alert.type" dismissible>
       <ng-container *ngIf="alert.icon">
-<!--        <div class="alert-inner&#45;&#45;icon">-->
-<!--            <i class="{{alert.icon}}"></i>-->
-<!--        </div>-->
+        <!--        <div class="alert-inner&#45;&#45;icon">-->
+        <!--            <i class="{{alert.icon}}"></i>-->
+        <!--        </div>-->
       </ng-container>
       <span class="alert-inner--text">  <strong>{{alert.strong}} </strong>{{ alert.message }}</span>
+    </ngb-alert>
+  </div>
+</div>
+<div *ngIf="alert" class="container">
+  <div>
+    <ngb-alert [type]="alert.type" dismissible>
+      <ng-container *ngIf="alert.icon">
+        <!--        <div class="alert-inner&#45;&#45;icon">-->
+        <!--            <i class="{{alert.icon}}"></i>-->
+        <!--        </div>-->
+      </ng-container>
+
+      <div class="alert-inner--text">
+        <strong>{{alert.header}}</strong>
+      </div>
+      <div *ngFor="let a of alert.alerts">
+        <div>{{a.message}}</div>
+      </div>
     </ngb-alert>
   </div>
 </div>

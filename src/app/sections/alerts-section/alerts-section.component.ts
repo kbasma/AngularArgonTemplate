@@ -1,12 +1,15 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 export interface IAlert {
-    id: number;
-    type: string;
-    strong?: string;
-    message: string;
-    icon?: string;
-    padding?: string;
+  id?: number;
+  key?: string;
+  type?: string;
+  strong?: string;
+  header?: string;
+  message?: string;
+  alerts?: Array<IAlert>;
+  icon?: string;
+  padding?: string;
 }
 
 @Component({
@@ -16,6 +19,7 @@ export interface IAlert {
 })
 export class AlertsSectionComponent {
   @Input() public alerts: Array<IAlert> = [];
+  @Input() public alert: IAlert;
   private backup: Array<IAlert>;
 
   constructor() {

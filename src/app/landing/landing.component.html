@@ -586,57 +586,69 @@
             <div class="card-body p-lg-5">
               <h4 class="mb-1">Want to work with us?</h4>
               <p class="mt-0">Tell us a bit about you</p>
-              <form [formGroup]="emailForm" (ngSubmit)="sendMessage()">
-                <app-alerts-section *ngIf="alerts.length > 0" [alerts]="alerts"></app-alerts-section>
+              <form id="emailForm" [formGroup]="emailForm" (ngSubmit)="sendMessage()">
+                <!--                <app-alerts-section *ngIf="alerts.length > 0" [alerts]="alerts"></app-alerts-section>-->
+                <app-alerts-section *ngIf="alert" [alert]="alert"></app-alerts-section>
                 <div class="form-group mt-1 d-flex justify-content-between" [ngClass]="{'focused':focus===true}">
                   <div class="input-group input-group-alternative mr-2">
-<!--                    <div *ngIf="emailForm.controls['fName'].invalid && (emailForm.controls['fName'].dirty || emailForm.controls['fName'].touched)" class="alert">-->
-<!--                      <div *ngIf="emailForm.controls['fName'].errors.required">-->
-<!--                        Please enter your first name-->
-<!--                      </div>-->
-<!--                    </div>-->
-<!--                    <div class="input-group-prepend">-->
-<!--                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>-->
-<!--                    </div>-->
-                    <input class="form-control" formControlName="fName" placeholder="First Name" type="text" (focus)="focus=true" (blur)="focus=false">
+                    <!--                    <div *ngIf="emailForm.controls['fName'].invalid && (emailForm.controls['fName'].dirty || emailForm.controls['fName'].touched)" class="alert">-->
+                    <!--                      <div *ngIf="emailForm.controls['fName'].errors.required">-->
+                    <!--                        Please enter your first name-->
+                    <!--                      </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="input-group-prepend">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>-->
+                    <!--                    </div>-->
+                    <input class="form-control" formControlName="fName" placeholder="First Name" type="text"
+                           [ngClass]="{'input-error': isFormFieldInvalid('fName')}"
+                           (focus)="focus=true" (blur)="focus=false">
                   </div>
                   <div class="input-group input-group-alternative">
-<!--                    <div class="input-group-prepend">-->
-<!--                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>-->
-<!--                    </div>-->
-                    <input class="form-control" formControlName="lName" placeholder="Last Name" type="text" (focus)="focus=true" (blur)="focus=false">
-                  </div>
-                </div>
-                <div class="form-group" [ngClass]="{'focused':focus1===true}">
-                  <div class="input-group input-group-alternative">
-<!--                    <div class="input-group-prepend">-->
-<!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
-<!--                    </div>-->
-                    <input class="form-control" formControlName="email" placeholder="Email address" type="email" (focus)="focus1=true" (blur)="focus1=false">
+                    <!--                    <div class="input-group-prepend">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-user-run"></i></span>-->
+                    <!--                    </div>-->
+                    <input class="form-control" formControlName="lName" placeholder="Last Name" type="text"
+                           [ngClass]="{'input-error': isFormFieldInvalid('lName')}"
+                           (focus)="focus=true" (blur)="focus=false">
                   </div>
                 </div>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
                   <div class="input-group input-group-alternative">
-<!--                    <div class="input-group-prepend">-->
-<!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
-<!--                    </div>-->
-                    <input class="form-control" formControlName="business" placeholder="Business Name" type="text" (focus)="focus1=true" (blur)="focus1=false">
+                    <!--                    <div class="input-group-prepend">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
+                    <!--                    </div>-->
+                    <input class="form-control" formControlName="email" placeholder="Email address" type="email"
+                           [ngClass]="{'input-error': isFormFieldInvalid('email')}"
+                           (focus)="focus1=true" (blur)="focus1=false">
                   </div>
                 </div>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
                   <div class="input-group input-group-alternative">
-<!--                    <div class="input-group-prepend">-->
-<!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
-<!--                    </div>-->
-                    <input class="form-control" formControlName="phone" placeholder="Phone Number (optional)" type="tel" (focus)="focus1=true" (blur)="focus1=false">
+                    <!--                    <div class="input-group-prepend">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
+                    <!--                    </div>-->
+                    <input class="form-control" formControlName="business" placeholder="Business Name" type="text"
+                           [ngClass]="{'input-error': isFormFieldInvalid('business')}"
+                           (focus)="focus1=true" (blur)="focus1=false">
                   </div>
                 </div>
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
                   <div class="input-group input-group-alternative">
-<!--                    <div class="input-group-prepend select-label-special-render">-->
-<!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
-<!--                    </div>-->
-                    <select class="form-control select-special-render" formControlName="service" id="service">
+                    <!--                    <div class="input-group-prepend">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
+                    <!--                    </div>-->
+                    <input class="form-control" formControlName="phone" placeholder="Phone Number (optional)" type="tel"
+                           [ngClass]="{'input-error': isFormFieldInvalid('phone')}"
+                           (focus)="focus1=true" (blur)="focus1=false">
+                  </div>
+                </div>
+                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                  <div class="input-group input-group-alternative">
+                    <!--                    <div class="input-group-prepend select-label-special-render">-->
+                    <!--                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>-->
+                    <!--                    </div>-->
+                    <select class="form-control select-special-render" formControlName="service" id="service"
+                            [ngClass]="{'input-error': isFormFieldInvalid('service')}">
                       <option style="display: none" [selected]="true">Services...</option>
                       <option value="Merchant Services">Merchant Services</option>
                       <option value="ISV Program">ISV Program</option>

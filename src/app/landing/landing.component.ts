@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IAlert} from '../sections/alerts-section/alerts-section.component';
 import {LANDING} from './landing.constants';
+import {getEmailFormKeyName} from './landing.utils';
 
 declare let Email: any;
 
@@ -16,6 +17,7 @@ export class LandingComponent implements OnInit {
   focus1: any;
   emailForm: FormGroup;
   alerts: Array<IAlert> = [];
+  alert: IAlert;
   commentRequest = new Map();
 
   constructor(
@@ -37,7 +39,8 @@ export class LandingComponent implements OnInit {
         Validators.maxLength(26)
       ]],
       email: ['', [
-        Validators.required
+        Validators.required,
+        Validators.email
       ]],
       phone: ['', []],
       business: ['', [
@@ -83,6 +86,7 @@ export class LandingComponent implements OnInit {
 
   sendMessage() {
     this.alerts = new Array<IAlert>();
+    this.alert = {};
     if (this.emailForm.valid) {
       Email.send({
         Host: 'smtp.elasticemail.com',
@@ -113,6 +117,7 @@ export class LandingComponent implements OnInit {
         }
       });
     } else {
+      this.emailForm.markAllAsTouched();
       this.handleFormErrors();
     }
   }
@@ -127,31 +132,54 @@ export class LandingComponent implements OnInit {
           switch (err) {
             case 'required':
               return this.alerts.push({
-                id: 4,
+                key: key,
                 type: 'warning',
                 strong: 'Warning!',
-                message: `${key} required`,
+                message: `- ${getEmailFormKeyName(key)} required`,
                 icon: 'ni ni-support-16'
               });
             case 'maxlength':
               return this.alerts.push({
-                id: 4,
+                key: key,
                 type: 'warning',
                 strong: 'Warning!',
-                message: `${key} maximum characters ${value.requiredLength}`,
+                message: `- ${getEmailFormKeyName(key)} maximum characters ${value.requiredLength}`,
+                icon: 'ni ni-support-16'
+              });
+            case 'email':
+              return this.alerts.push({
+                key: key,
+                type: 'warning',
+                strong: 'Warning!',
+                message: `- ${getEmailFormKeyName(key)} invalid email format`,
                 icon: 'ni ni-support-16'
               });
             default:
               return this.alerts.push({
-                id: 4,
+                key: key,
                 type: 'warning',
                 strong: 'Warning!',
-                message: `Unknown Error Occurred`,
+                message: `- Unknown error for ${getEmailFormKeyName(key)}`,
                 icon: 'ni ni-support-16'
               });
           }
         });
+        this.buildErrorMessage();
       }
     });
+  }
+
+  buildErrorMessage() {
+    this.alert = {
+      type: 'warning',
+      strong: 'Warning!',
+      header: 'Please fix the following errors.',
+      alerts: this.alerts,
+      icon: 'ni ni-support-16'
+    };
+  }
+
+  isFormFieldInvalid(type) {
+    return this.emailForm.controls[type].touched && this.emailForm.controls[type].invalid;
   }
 }
