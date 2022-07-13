@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IAlert} from '../sections/alerts-section/alerts-section.component';
 import {LANDING} from './landing.constants';
 import {APP} from '../core/constants';
-import {getEmailFormKeyName} from './landing.utils';
+import {containsExclusionKey, getEmailFormKeyName} from './landing.utils';
 
 declare let Email: any;
 
@@ -62,11 +62,11 @@ export class LandingComponent implements OnInit {
     const comments = this.emailForm.controls['comments'].value;
     // Remove any additional comments that have been manually deleted from text area
     for (const entry of this.commentRequest.entries()) {
-      if (!comments.toUpperCase().includes(entry[0])) {
+      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments)) {
         this.commentRequest.delete(entry[0]);
       }
     }
-    this.commentRequest.set(type, `${LANDING.COMMENTS[type]}`);
+    this.commentRequest.set(type, `${LANDING.COMMENTS[type].MESSAGE}`);
     this.buildComments();
   }
 
@@ -74,7 +74,7 @@ export class LandingComponent implements OnInit {
     let comments = this.emailForm.controls['comments'].value;
     // Build the comments
     for (const entry of this.commentRequest.entries()) {
-      if (!comments.toUpperCase().includes(entry[0])) {
+      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments)) {
         if (comments.length > 0) {
           comments += `\n${LANDING.COMMENTS.ADDITIONAL}${entry[1]}\n`;
         } else {
