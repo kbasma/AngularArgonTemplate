@@ -1,6 +1,6 @@
 export const LANDING = {
   COMMENTS: {
-    ADDITIONAL: 'In Addition, ',
+    ADDITIONAL: 'In addition, ',
     TEXT: 'I would like to learn more about Tackon’s Text Solutions.',
     SCAN: 'I would like to learn more about Tackon’s Scan Solutions.',
     QR: 'I would like to learn more about Tackon’s QR Solutions.',
@@ -17,5 +17,5 @@ export const LANDING = {
       service: 'Service',
       comments: 'Comments'
     }
-  }
+  },
 };

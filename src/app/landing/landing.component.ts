@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IAlert} from '../sections/alerts-section/alerts-section.component';
 import {LANDING} from './landing.constants';
+import {APP} from '../core/constants';
 import {getEmailFormKeyName} from './landing.utils';
 
 declare let Email: any;
@@ -19,6 +20,7 @@ export class LandingComponent implements OnInit {
   alerts: Array<IAlert> = [];
   alert: IAlert;
   commentRequest = new Map();
+  appConstants = APP;
 
   constructor(
     private formBuilder: FormBuilder
@@ -59,9 +61,8 @@ export class LandingComponent implements OnInit {
   populateComment(type) {
     const comments = this.emailForm.controls['comments'].value;
     // Remove any additional comments that have been manually deleted from text area
-    for (let entry of this.commentRequest.entries()) {
-      console.log(entry[0], entry[1]);
-      if (!comments.includes(entry[1])) {
+    for (const entry of this.commentRequest.entries()) {
+      if (!comments.toUpperCase().includes(entry[0])) {
         this.commentRequest.delete(entry[0]);
       }
     }
@@ -73,7 +74,7 @@ export class LandingComponent implements OnInit {
     let comments = this.emailForm.controls['comments'].value;
     // Build the comments
     for (const entry of this.commentRequest.entries()) {
-      if (!comments.includes(entry[1])) {
+      if (!comments.toUpperCase().includes(entry[0])) {
         if (comments.length > 0) {
           comments += `\n${LANDING.COMMENTS.ADDITIONAL}${entry[1]}\n`;
         } else {
@@ -93,9 +94,9 @@ export class LandingComponent implements OnInit {
         Username: 'zack.blaylock@tackontechnologies.com',
         Password: '57071303FB87FF861FBD1E47B1A33992C801',
         To: 'info@tackontechnologies.com',
-        From: 'info@tackontechnologies.com',
-        Subject : `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
-        Body :
+        From: this.emailForm.controls['email'].value,
+        Subject: `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
+        Body:
           `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
           <br/> <b>Name:</b>          <br/>   ${this.emailForm.controls['fName'].value} ${this.emailForm.controls['lName'].value}
           <br/> <b>Email:</b>         <br/>   ${this.emailForm.controls['email'].value}
@@ -173,7 +174,7 @@ export class LandingComponent implements OnInit {
     this.alert = {
       type: 'warning',
       strong: 'Warning!',
-      header: 'Please fix the following errors.',
+      header: 'Please fix the following fields.',
       alerts: this.alerts,
       icon: 'ni ni-support-16'
     };
