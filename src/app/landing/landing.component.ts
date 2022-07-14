@@ -71,7 +71,7 @@ export class LandingComponent implements OnInit {
   }
 
   buildComments() {
-    let comments = this.emailForm.controls['comments'].value;
+    let comments = this.emailForm.controls['comments'].value.trimEnd();
     // Build the comments
     for (const entry of this.commentRequest.entries()) {
       if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments.toLowerCase())) {
