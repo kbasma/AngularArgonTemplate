@@ -62,7 +62,7 @@ export class LandingComponent implements OnInit {
     const comments = this.emailForm.controls['comments'].value;
     // Remove any additional comments that have been manually deleted from text area
     for (const entry of this.commentRequest.entries()) {
-      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments)) {
+      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments.toLowerCase())) {
         this.commentRequest.delete(entry[0]);
       }
     }
@@ -74,7 +74,7 @@ export class LandingComponent implements OnInit {
     let comments = this.emailForm.controls['comments'].value;
     // Build the comments
     for (const entry of this.commentRequest.entries()) {
-      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments)) {
+      if (!containsExclusionKey(LANDING.COMMENTS[entry[0]].EXCLUSION_KEYS, comments.toLowerCase())) {
         if (comments.length > 0) {
           comments += `\n${LANDING.COMMENTS.ADDITIONAL}${entry[1]}\n`;
         } else {
