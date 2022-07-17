@@ -6,16 +6,18 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
-import { LandingComponent } from './landing/landing.component';
-import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import {SignupComponent} from './signup/signup.component';
+import {LandingComponent} from './landing/landing.component';
+import {ProfileComponent} from './profile/profile.component';
+import {HomeComponent} from './home/home.component';
+import {NavbarComponent} from './shared/navbar/navbar.component';
+import {FooterComponent} from './shared/footer/footer.component';
 
-import { HomeModule } from './home/home.module';
-import { LoginComponent } from './login/login.component';
+import {HomeModule} from './home/home.module';
+import {LoginComponent} from './login/login.component';
 import {SectionsModule} from './sections/sections.module';
+import {SmtpService} from './core/aws/smtp.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,9 +37,10 @@ import {SectionsModule} from './sections/sections.module';
     AppRoutingModule,
     HomeModule,
     ReactiveFormsModule,
-    SectionsModule
+    SectionsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SmtpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

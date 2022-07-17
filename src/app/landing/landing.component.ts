@@ -4,6 +4,7 @@ import {IAlert} from '../sections/alerts-section/alerts-section.component';
 import {LANDING} from './landing.constants';
 import {APP} from '../core/constants';
 import {containsExclusionKey, getEmailFormKeyName} from './landing.utils';
+import {SmtpService} from '../core/aws/smtp.service';
 
 declare let Email: any;
 
@@ -23,6 +24,7 @@ export class LandingComponent implements OnInit {
   appConstants = APP;
 
   constructor(
+    private _smtpService: SmtpService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -89,21 +91,16 @@ export class LandingComponent implements OnInit {
     this.alerts = new Array<IAlert>();
     this.alert = {};
     if (this.emailForm.valid) {
-      Email.send({
-        Host: 'smtp.elasticemail.com',
-        Username: 'zack.blaylock@tackontechnologies.com',
-        Password: '57071303FB87FF861FBD1E47B1A33992C801',
-        To: 'info@tackontechnologies.com',
-        From: this.emailForm.controls['email'].value,
-        Subject: `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
-        Body:
-          `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
+      this._smtpService.sendMail(
+        this.emailForm.controls['email'].value,
+        `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
+        `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
           <br/> <b>Name:</b>          <br/>   ${this.emailForm.controls['fName'].value} ${this.emailForm.controls['lName'].value}
           <br/> <b>Email:</b>         <br/>   ${this.emailForm.controls['email'].value}
           <br/> <b>Business Name:</b> <br/>   ${this.emailForm.controls['business'].value}
           <br/> <b>Phone:</b>         <br/>   ${this.emailForm.controls['phone'].value}
           <br/> <b>Comments:</b>      <br/>   ${this.emailForm.controls['comments'].value}`
-      }).then(message => {
+      ).then(message => {
         this.emailForm.reset();
         if (message === 'OK') {
           this.alerts.push({
