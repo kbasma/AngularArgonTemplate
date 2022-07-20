@@ -94,25 +94,17 @@ export class LandingComponent implements OnInit {
       this._smtpService.sendMail(
         this.emailForm.controls['email'].value,
         `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}`,
-        `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
-          <br/> <b>Name:</b>          <br/>   ${this.emailForm.controls['fName'].value} ${this.emailForm.controls['lName'].value}
-          <br/> <b>Email:</b>         <br/>   ${this.emailForm.controls['email'].value}
-          <br/> <b>Business Name:</b> <br/>   ${this.emailForm.controls['business'].value}
-          <br/> <b>Phone:</b>         <br/>   ${this.emailForm.controls['phone'].value}
-          <br/> <b>Comments:</b>      <br/>   ${this.emailForm.controls['comments'].value}`
-      ).then(message => {
+        this.buildTextEmailBody(),
+      ).then((res) => {
         this.emailForm.reset();
-        if (message === 'OK') {
-          this.alerts.push({
-            id: 1,
-            type: 'success',
-            strong: 'Success!',
-            message: 'Email Successfully Sent!',
-            icon: 'ni ni-like-2'
-          });
+        if (res['email_sent'] === 'SUCCESS') {
+          this.buildAlertSendEmail('success', 'Email Successfully Sent!');
         } else {
-          alert(message);
+          this.buildAlertSendEmail('warning', 'Email Unsucessfully Sent!');
         }
+      }).catch(() => {
+        this.emailForm.reset();
+        this.buildAlertSendEmail('warning', 'Email Unsucessfully Sent!');
       });
     } else {
       this.emailForm.markAllAsTouched();
@@ -167,6 +159,24 @@ export class LandingComponent implements OnInit {
     });
   }
 
+  buildHtmlEmailBody() {
+    return `<i>New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value}</i>
+          <br/> <b>Name:</b>          <br/>   ${this.emailForm.controls['fName'].value} ${this.emailForm.controls['lName'].value}
+          <br/> <b>Email:</b>         <br/>   ${this.emailForm.controls['email'].value}
+          <br/> <b>Business Name:</b> <br/>   ${this.emailForm.controls['business'].value}
+          <br/> <b>Phone:</b>         <br/>   ${this.emailForm.controls['phone'].value}
+          <br/> <b>Comments:</b>      <br/>   ${this.emailForm.controls['comments'].value}`;
+  }
+
+  buildTextEmailBody() {
+    return `New Tackon Technologies Business Request : ${this.emailForm.controls['business'].value} \n
+          Name: ${this.emailForm.controls['fName'].value} ${this.emailForm.controls['lName'].value} \n
+          Email: ${this.emailForm.controls['email'].value} \n
+          Business Name: ${this.emailForm.controls['business'].value} \n
+          Phone: ${this.emailForm.controls['phone'].value} \n
+          Comments: ${this.emailForm.controls['comments'].value}`;
+  }
+
   buildErrorMessage() {
     this.alert = {
       type: 'warning',
@@ -174,6 +184,14 @@ export class LandingComponent implements OnInit {
       header: 'Please fix the following fields.',
       alerts: this.alerts,
       icon: 'ni ni-support-16'
+    };
+  }
+
+  buildAlertSendEmail(type, header) {
+    this.alert = {
+      type: type,
+      header: header,
+      icon: 'ni ni-like-2'
     };
   }
 
